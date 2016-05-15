@@ -9,7 +9,7 @@ app.listen((process.env.PORT || 3000));
 
 // Server frontpage
 app.get('/', function (req, res) {
-    res.send('This is TestBot Server');
+    res.send('This is SiBot Server');
 });
 
 // Facebook Webhook
@@ -31,7 +31,7 @@ app.post('/webhook', function (req, res) {
         // }
         if (event.message && event.message.text) {
           if (!kittenMessage(event.sender.id, event.message.text)) {
-              sendMessage(event.sender.id, {text: "Echo: " + event.message.text});
+              sendMessage(event.sender.id, {text: "Echo: " + event.message.text + "User ID:" + event.sender.id});
             }
         }
     }
